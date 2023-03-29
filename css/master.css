@@ -1,10 +1,74 @@
 :root {
     --app-height: 100%;
 }
+*{
+    transition: all .5s;
+}
+#app{
+    height: 100vh;
+    height: var(--app-height);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+}
 
-/* 
-height: 100vh;
-height: var(--app-height);
- */
+.text{
+    position: absolute;
+    bottom: 0;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.529);
+    width: 100%;
+    height: 100px;
+}
 
- 
+.imagesContainer{
+    position: relative;
+    width: 80%;
+    height: 500px;
+    max-width: 80%;
+    overflow: hidden;
+}
+.thumbnails {
+    position: relative;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    object-fit: cover;
+}
+.imagesContainer img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumbnails img{
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    position: relative;
+    opacity: .7;
+    filter: brightness(.5);
+    cursor: pointer;
+}
+
+.thumbnails img.active{
+    border: 1px solid white;
+    opacity: 1;
+    filter: brightness(1);
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+button.down{
+    top: 95%;
+}
