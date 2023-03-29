@@ -21,7 +21,7 @@
             </div>
           </div>
           <div class="thumbnails">
-            <img v-for="(image, index) in images" :class="imageIndex === index && active" :src="'./' + image.image" :alt="image.title" @click="thumbsClick(index)">
+            <img v-for="(image, index) in images" :class="imageIndex === index && active" :src="'./' + image.image" :alt="image.title" :key="image.title" @click="thumbsClick(index)">
             <button @click="prevSlide()"><i class="fa-solid fa-circle-up"></i></button>
             <button @click="nextSlide()" class="down"><i class="fa-solid fa-circle-down"></i></button>
           </div>
