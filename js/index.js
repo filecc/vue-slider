@@ -1,6 +1,5 @@
 import { setAppHeight } from "./utils.js";
 
-
 (() => {
   setAppHeight();
   window.addEventListener("resize", setAppHeight);
@@ -10,8 +9,8 @@ import { setAppHeight } from "./utils.js";
   createApp({
     data() {
       return {
-        active: 'active',
-        images : [
+        active: "active",
+        images: [
           {
             image: "img/01.webp",
             title: "Marvel's Spiderman Miles Morale",
@@ -39,42 +38,40 @@ import { setAppHeight } from "./utils.js";
           },
         ],
         imageIndex: 0,
-        imageToDisplay: '',
-        autoplay:  setInterval(this.nextSlide, 3000)
-      }
+        imageToDisplay: "",
+        autoplay: setInterval(this.nextSlide, 3000),
+      };
     },
     methods: {
       nextSlide() {
-        if (this.imageIndex === this.images.length - 1){
+        if (this.imageIndex === this.images.length - 1) {
           this.imageIndex = 0;
         } else {
-          this.imageIndex +=1;
+          this.imageIndex += 1;
         }
-        this.imageToDisplay = this.images[this.imageIndex].image
+        this.imageToDisplay = this.images[this.imageIndex].image;
       },
-      prevSlide(){
-        if (this.imageIndex === 0){
+      prevSlide() {
+        if (this.imageIndex === 0) {
           this.imageIndex = this.images.length - 1;
         } else {
-          this.imageIndex -=1;
+          this.imageIndex -= 1;
         }
-        this.imageToDisplay = this.images[this.imageIndex].image
+        this.imageToDisplay = this.images[this.imageIndex].image;
       },
-      thumbsClick(id){
+      thumbsClick(id) {
         this.imageIndex = id;
         this.imageToDisplay = this.images[id].image;
       },
-      stopPlaying(){
+      stopPlaying() {
         clearInterval(this.autoplay);
       },
-      restart(){
-        this.autoplay = setInterval(this.nextSlide, 3000)
-      }
-     
+      restart() {
+        this.autoplay = setInterval(this.nextSlide, 3000);
+      },
     },
     mounted() {
-     this.autoplay
-    }
-    
+      this.autoplay;
+    },
   }).mount("#app");
 })();
