@@ -14,7 +14,7 @@
       <div class="container">
         <div class="d-flex w-100 slider" @mouseover="stopPlaying()" @mouseleave="restart()">
           <div class="imagesContainer">
-            <img class="img-fluid" :src="'./'+ (imageIndex === 0 ? images[0].image : imageToDisplay)" :alt="images[imageIndex].title">
+            <img class="img-fluid" :src="(images[imageIndex].image)" :alt="images[imageIndex].title">
             <div class="text">
               <h1 class="h5">{{images[imageIndex].title}}</h1>
               <small>{{images[imageIndex].text}}</small>

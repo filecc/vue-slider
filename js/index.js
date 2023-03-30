@@ -38,7 +38,6 @@ import { setAppHeight } from "./utils.js";
           },
         ],
         imageIndex: 0,
-        imageToDisplay: "",
         autoplay: setInterval(this.nextSlide, 3000),
       };
     },
@@ -49,7 +48,6 @@ import { setAppHeight } from "./utils.js";
         } else {
           this.imageIndex += 1;
         }
-        this.imageToDisplay = this.images[this.imageIndex].image;
       },
       prevSlide() {
         if (this.imageIndex === 0) {
@@ -57,11 +55,10 @@ import { setAppHeight } from "./utils.js";
         } else {
           this.imageIndex -= 1;
         }
-        this.imageToDisplay = this.images[this.imageIndex].image;
       },
       thumbsClick(id) {
         this.imageIndex = id;
-        this.imageToDisplay = this.images[id].image;
+        
       },
       stopPlaying() {
         clearInterval(this.autoplay);
